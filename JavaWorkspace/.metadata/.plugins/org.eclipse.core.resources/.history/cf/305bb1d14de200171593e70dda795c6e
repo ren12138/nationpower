@@ -1,0 +1,40 @@
+package com.app.nationpower;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+	private EditText usernameEditText;
+	private EditText passwordEditText;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Button btnLogin = (Button)findViewById(R.id.btnlogin);
+        usernameEditText  =(EditText)findViewById(R.id.edit_username);
+        passwordEditText =(EditText)findViewById(R.id.edit_password);
+        btnLogin.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				System.out.println(usernameEditText.getText());
+				System.out.println(passwordEditText.getText());
+				if (usernameEditText.getText().equals("ren")&&passwordEditText.getText()=="123456") {
+					Toast.makeText(MainActivity.this, "µ«¬º≥…π¶",1).show();
+				}else {
+					Toast.makeText(MainActivity.this, "’ÀªßªÚ√‹¬Î¥ÌŒÛ",1).show();
+				}
+				System.out.println("2");
+			}
+		});
+    }
+
+ 
+}
